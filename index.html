@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>MODULIMO | Innovation — V12 Investor Pitch</title>
   <meta name="description" content="MODULIMO structure un écosystème intégré combinant habitation familiale, mobilité, services, infrastructure logicielle, construction industrialisée et innovation avancée." />
-  <meta name="theme-color" content="#0a1117" />
+  <meta name="theme-color" content="#0a1117" />a
   <link rel="icon" href="images/modulimo_favicon_v7.ico" />
   <link rel="shortcut icon" href="images/modulimo_favicon_v7.ico" />
   <link rel="apple-touch-icon" href="images/modulimo_favicon_v7.png" />
@@ -544,25 +544,20 @@
       display:block;
     }
     .minette-badge{
-      position:absolute;
-      right:12px;
-      bottom:8px;
-      z-index:61;
-      padding:7px 11px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(8,18,28,.68);
-      color:#e8f2fb;
-      font-size:.8rem;
-      backdrop-filter:blur(10px);
-      -webkit-backdrop-filter:blur(10px);
-      box-shadow:0 16px 30px rgba(0,0,0,.18);
-      opacity:.92;
-      pointer-events:none;
+      display:none;
     }
-    .minette-anchor:hover .minette-mascot{
+    .minette-anchor:hover .minette-mascot,
+    .minette-anchor.is-peek .minette-mascot{
       transform:translateY(-2px) scale(1.02);
       filter:drop-shadow(0 24px 46px rgba(0,0,0,.44));
+    }
+    .minette-anchor.is-hidden{
+      opacity:.18;
+      transform:translateX(28%);
+    }
+    .minette-anchor.is-reading{
+      opacity:.7;
+      transform:translateX(8%);
     }
     .minette-anchor{
       position:fixed;
@@ -576,6 +571,7 @@
       width:min(16vw, 150px);
       min-width:82px;
       height:auto;
+      transition:transform .22s ease, opacity .22s ease;
     }
     @media (max-width: 780px){
       .minette-mascot{
@@ -583,6 +579,10 @@
         min-width:72px;
         right:max(4px, env(safe-area-inset-right));
         bottom:max(4px, env(safe-area-inset-bottom));
+      }
+      .minette-anchor.is-hidden{
+        transform:translateX(42%);
+        opacity:.08;
       }
       .minette-badge{
         right:8px;
@@ -1120,7 +1120,7 @@
   </div>
 
 
-  <a class="minette-anchor" href="#top" aria-label="Minette">
+  <a class="minette-anchor" id="minetteAnchor" href="#top" aria-label="Minette">
     <div class="minette-badge"><span data-lang="fr">Minette</span><span data-lang="en">Minette</span></div>
     <div class="minette-mascot">
       <img src="images/Minette.png" alt="Minette" />
