@@ -525,6 +525,70 @@
       to{transform:translateY(0) scale(1); opacity:1}
     }
 
+    .minette-mascot{
+      position:fixed;
+      right:max(10px, env(safe-area-inset-right));
+      bottom:max(8px, env(safe-area-inset-bottom));
+      z-index:60;
+      width:min(16vw, 150px);
+      min-width:82px;
+      pointer-events:none;
+      filter:drop-shadow(0 18px 34px rgba(0,0,0,.34));
+      opacity:.96;
+      transform:translateY(0);
+      transition:transform .22s ease, filter .22s ease, opacity .22s ease;
+    }
+    .minette-mascot img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+    .minette-badge{
+      position:absolute;
+      right:18px;
+      bottom:calc(min(16vw, 150px) + 10px);
+      z-index:61;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(8,18,28,.68);
+      color:#e8f2fb;
+      font-size:.84rem;
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+      box-shadow:0 16px 30px rgba(0,0,0,.18);
+      opacity:.9;
+    }
+    .minette-anchor:hover .minette-mascot{
+      transform:translateY(-2px) scale(1.02);
+      filter:drop-shadow(0 24px 46px rgba(0,0,0,.44));
+    }
+    .minette-anchor{
+      position:fixed;
+      right:0;
+      bottom:0;
+      z-index:59;
+      display:block;
+      pointer-events:auto;
+      text-decoration:none;
+      -webkit-tap-highlight-color:transparent;
+    }
+    @media (max-width: 780px){
+      .minette-mascot{
+        width:min(22vw, 112px);
+        min-width:72px;
+        right:max(4px, env(safe-area-inset-right));
+        bottom:max(4px, env(safe-area-inset-bottom));
+      }
+      .minette-badge{
+        right:10px;
+        bottom:calc(min(22vw, 112px) + 8px);
+        font-size:.76rem;
+        padding:7px 10px;
+      }
+    }
+
+
 
 
     section.block{padding:18px 0}
@@ -648,7 +712,7 @@
     }
   </style>
 </head>
-<body>
+<body id="top">
   <section class="hero-logo">
     <a href="https://www.modulimo.com" target="_blank" rel="noopener" aria-label="Aller à Modulimo">
       <img src="images/Logo_Innovation_Modulimo.png" alt="MODULIMO">
@@ -1050,6 +1114,14 @@
       <div class="image-modal-hint"><span data-lang="fr">Cliquer à l’extérieur pour fermer</span><span data-lang="en">Click outside to close</span></div>
     </div>
   </div>
+
+
+  <a class="minette-anchor" href="#top" aria-label="Minette">
+    <div class="minette-badge"><span data-lang="fr">Minette</span><span data-lang="en">Minette</span></div>
+    <div class="minette-mascot">
+      <img src="images/Minette.png" alt="Minette" />
+    </div>
+  </a>
 
   <footer class="footer wrap">
     <div data-lang="fr">Version GitHub Pages, prête à publier sur <strong>https://simonvelucia-afk.github.io/innovation/</strong>.</div>
