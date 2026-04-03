@@ -28,6 +28,7 @@
     html{scroll-behavior:smooth}
     body{
       margin:0;
+      padding-top:70px;
       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
       color:var(--text);
       background:
@@ -50,26 +51,36 @@
     img{display:block;max-width:100%}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
     .topbar{
-      position:sticky; top:0; z-index:40;
-      background:rgba(8,16,24,.78);
-      backdrop-filter:blur(14px);
-      -webkit-backdrop-filter:blur(14px);
+      position:fixed; top:0; left:0; right:0; z-index:40;
+      background:rgba(8,16,24,.88);
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
       border-bottom:1px solid var(--line);
     }
     .topbar-inner{
       max-width:var(--max);
       margin:0 auto;
-      padding:14px 18px;
+      padding:8px 18px;
       display:grid;
-      grid-template-columns:1fr auto;
+      grid-template-columns:auto 1fr auto;
       align-items:center;
       gap:14px;
     }
-    .brand{
-      font-weight:800;
-      letter-spacing:.16em;
-      color:var(--text);
-      font-size:.98rem;
+    .brand-logo{
+      display:flex;
+      align-items:center;
+      flex-shrink:0;
+    }
+    .brand-logo img{
+      height:52px;
+      width:auto;
+      display:block;
+      object-fit:contain;
+      filter:drop-shadow(0 2px 8px rgba(0,0,0,.4));
+      transition:opacity .2s ease;
+    }
+    .brand-logo:hover img{
+      opacity:.85;
     }
     .menu-toggle{
       display:none;
@@ -102,18 +113,6 @@
       color:var(--text);
       border-color:var(--line);
       background:rgba(255,255,255,.05);
-    }
-
-    .hero-logo{
-      width:100%;
-      background:linear-gradient(180deg,#04070a 0%, #0a1117 100%);
-      display:flex; align-items:center; justify-content:center;
-      padding:58px 20px 40px;
-      border-bottom:1px solid var(--line);
-    }
-    .hero-logo img{
-      max-width:980px; width:100%; height:auto; object-fit:contain;
-      filter:drop-shadow(0 25px 60px rgba(0,0,0,.60));
     }
 
     .hero{padding:28px 0 18px}
@@ -677,12 +676,15 @@
     [data-lang]{display:none}
     html.lang-fr [data-lang="fr"]{display:block}
     html.lang-en [data-lang="en"]{display:block}
+    html.lang-es [data-lang="es"]{display:block}
     .nav a [data-lang]{display:none}
     html.lang-fr .nav a [data-lang="fr"]{display:inline}
     html.lang-en .nav a [data-lang="en"]{display:inline}
+    html.lang-es .nav a [data-lang="es"]{display:inline}
     .btn [data-lang], .eyebrow [data-lang], .smallcaps [data-lang], h1 [data-lang], h2 [data-lang], h3 [data-lang], p [data-lang], .legal [data-lang], .footer [data-lang], .chip [data-lang], .pill [data-lang], .list [data-lang]{display:none}
     html.lang-fr .btn [data-lang="fr"], html.lang-fr .eyebrow [data-lang="fr"], html.lang-fr .smallcaps [data-lang="fr"], html.lang-fr h1 [data-lang="fr"], html.lang-fr h2 [data-lang="fr"], html.lang-fr h3 [data-lang="fr"], html.lang-fr p [data-lang="fr"], html.lang-fr .legal [data-lang="fr"], html.lang-fr .footer [data-lang="fr"], html.lang-fr .chip [data-lang="fr"], html.lang-fr .pill [data-lang="fr"], html.lang-fr .list [data-lang="fr"]{display:inline}
     html.lang-en .btn [data-lang="en"], html.lang-en .eyebrow [data-lang="en"], html.lang-en .smallcaps [data-lang="en"], html.lang-en h1 [data-lang="en"], html.lang-en h2 [data-lang="en"], html.lang-en h3 [data-lang="en"], html.lang-en p [data-lang="en"], html.lang-en .legal [data-lang="en"], html.lang-en .footer [data-lang="en"], html.lang-en .chip [data-lang="en"], html.lang-en .pill [data-lang="en"], html.lang-en .list [data-lang="en"]{display:inline}
+    html.lang-es .btn [data-lang="es"], html.lang-es .eyebrow [data-lang="es"], html.lang-es .smallcaps [data-lang="es"], html.lang-es h1 [data-lang="es"], html.lang-es h2 [data-lang="es"], html.lang-es h3 [data-lang="es"], html.lang-es p [data-lang="es"], html.lang-es .legal [data-lang="es"], html.lang-es .footer [data-lang="es"], html.lang-es .chip [data-lang="es"], html.lang-es .pill [data-lang="es"], html.lang-es .list [data-lang="es"]{display:inline}
 
     
     .reveal{opacity:0;transform:translateY(20px);transition:opacity .65s ease, transform .65s ease}
@@ -692,20 +694,6 @@
     .hero-logo a{
       display:inline-block;
     }
-    .hero-logo img{
-      transition:transform .25s ease, filter .25s ease;
-    }
-    .hero-logo a:hover img{
-      transform:scale(1.02);
-      filter:drop-shadow(0 30px 80px rgba(0,0,0,.7));
-    }
-    .brand{
-      text-decoration:none;
-      transition:opacity .2s ease;
-    }
-    .brand:hover{
-      opacity:.82;
-    }
 
     @media (max-width:980px){
       .hero-grid,.grid-2,.grid-3{grid-template-columns:1fr}
@@ -713,7 +701,7 @@
       .hero-copy{padding:24px}
     }
     @media (max-width:760px){
-      .topbar-inner{grid-template-columns:1fr auto}
+      .topbar-inner{grid-template-columns:auto 1fr auto}
       .menu-toggle{display:inline-flex}
       .nav{
         grid-column:1/-1;
@@ -728,37 +716,34 @@
         border:1px solid var(--line);
         background:rgba(255,255,255,.03);
       }
+      .brand-logo img{height:40px}
     }
     @media (max-width:640px){
       .actions{flex-direction:column}
       .btn{width:100%}
-      .hero-logo{padding:44px 18px 28px}
     }
   </style>
 </head>
 <body id="top">
-  <section class="hero-logo">
-    <a href="https://www.modulimo.com" target="_blank" rel="noopener" aria-label="Aller à Modulimo">
-      <img src="images/Logo_Innovation_Modulimo.png" alt="MODULIMO">
-    </a>
-  </section>
-
-  <header class="topbar">
+  <header class="topbar" id="top">
     <div class="topbar-inner">
-      <a href="https://www.modulimo.com" class="brand" target="_blank" rel="noopener">MODULIMO</a>
+      <a href="https://www.modulimo.com" class="brand-logo" target="_blank" rel="noopener" aria-label="MODULIMO">
+        <img src="images/Logo_Innovation_Modulimo.png" alt="MODULIMO" />
+      </a>
       <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
       <nav class="nav" id="siteNav">
-        <a href="#thesis"><span data-lang="fr">Thèse</span><span data-lang="en">Thesis</span></a>
-        <a href="#software"><span data-lang="fr">Logiciel</span><span data-lang="en">Software</span></a>
-        <a href="#build"><span data-lang="fr">Construction</span><span data-lang="en">Construction</span></a>
-        <a href="#living"><span data-lang="fr">Habitation</span><span data-lang="en">Living</span></a>
-        <a href="#family"><span data-lang="fr">Familles</span><span data-lang="en">Families</span></a>
-        <a href="#mobility"><span data-lang="fr">Mobilité</span><span data-lang="en">Mobility</span></a>
-        <a href="#mobility"><span data-lang="fr">Laboratoire</span><span data-lang="en">Lab</span></a>
+        <a href="#thesis"><span data-lang="fr">Thèse</span><span data-lang="en">Thesis</span><span data-lang="es">Tesis</span></a>
+        <a href="#software"><span data-lang="fr">Logiciel</span><span data-lang="en">Software</span><span data-lang="es">Software</span></a>
+        <a href="#build"><span data-lang="fr">Construction</span><span data-lang="en">Construction</span><span data-lang="es">Construcción</span></a>
+        <a href="#living"><span data-lang="fr">Habitation</span><span data-lang="en">Living</span><span data-lang="es">Vivienda</span></a>
+        <a href="#family"><span data-lang="fr">Familles</span><span data-lang="en">Families</span><span data-lang="es">Familias</span></a>
+        <a href="#mobility"><span data-lang="fr">Mobilité</span><span data-lang="en">Mobility</span><span data-lang="es">Movilidad</span></a>
+        <a href="#lab"><span data-lang="fr">Laboratoire</span><span data-lang="en">Lab</span><span data-lang="es">Lab</span></a>
         <button class="lang-btn" data-set-lang="fr" aria-label="Afficher en français">FR</button>
         <button class="lang-btn" data-set-lang="en" aria-label="Display in English">EN</button>
+        <button class="lang-btn" data-set-lang="es" aria-label="Mostrar en español">ES</button>
       </nav>
     </div>
   </header>
@@ -999,9 +984,7 @@
                 <a class="dashboard-link" href="https://simonvelucia-afk.github.io/modulimo-dashboard/" target="_blank" rel="noopener">
                   <span data-lang="fr">Ouvrir la démo</span><span data-lang="en">Open demo</span>
                 </a>
-                <button class="dashboard-link dashboard-fullscreen-btn" type="button" data-dashboard-fullscreen="https://simonvelucia-afk.github.io/modulimo-dashboard/">
-                  <span data-lang="fr">Plein écran</span><span data-lang="en">Fullscreen</span>
-                </button>
+
               </div>
             </div>
             <div class="dashboard-iframe-wrap" id="dashboardPreviewWrap">
@@ -1164,12 +1147,12 @@
       const root = document.documentElement;
       const stored = localStorage.getItem('modulimo_lang');
       const browser = (navigator.language || navigator.userLanguage || 'fr').toLowerCase();
-      const initial = stored || (browser.startsWith('fr') ? 'fr' : 'en');
+      const initial = stored || (browser.startsWith('fr') ? 'fr' : browser.startsWith('es') ? 'es' : 'en');
       const nav = document.getElementById('siteNav');
       const toggle = document.getElementById('menuToggle');
 
       function setLang(lang) {
-        root.classList.remove('lang-fr', 'lang-en');
+        root.classList.remove('lang-fr', 'lang-en', 'lang-es');
         root.classList.add('lang-' + lang);
         root.setAttribute('lang', lang);
         localStorage.setItem('modulimo_lang', lang);
