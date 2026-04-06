@@ -25,7 +25,7 @@
       --radius:26px;
     }
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth;scroll-padding-top:80px}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
       padding-top:120px;
@@ -626,7 +626,7 @@
     .legal-accordion-trigger{
       width:100%; display:flex; align-items:center; justify-content:space-between;
       gap:12px; padding:13px 20px;
-      background:none; border:none; color:var(--text);
+      background:none; border:none;
       font:inherit; font-size:.88rem; font-weight:600;
       cursor:pointer; text-align:left;
       color:#f4e7bd;
@@ -805,7 +805,7 @@
   </header>
 
   <!-- Avis important accordéon -->
-  <div class="wrap" style="padding-top:0;margin-top:-60px;margin-bottom:8px;">
+  <div class="wrap" style="margin-top:60px;margin-bottom:0;">
     <div class="legal-accordion" id="legalAccordion">
       <button class="legal-accordion-trigger" id="legalTrigger" aria-expanded="false" aria-controls="legalBody">
         <span>
@@ -839,11 +839,6 @@
               <span data-lang="en">An integrated residential platform designed for large-scale deployment.</span>
             </h1>
 
-            <p class="lede">
-              <span data-lang="fr">MODULIMO structure un écosystème intégré combinant habitation familiale, mobilité, services et infrastructure logicielle. L’ensemble s’appuie sur une logique de construction industrialisée et sur un laboratoire d’innovation avancée. Certaines composantes sont déjà démontrables, tandis que d’autres poursuivent leur développement dans un cadre d’exploration structuré.</span>
-              <span data-lang="en">MODULIMO structures an integrated ecosystem combining family housing, mobility, services, and software infrastructure. The whole system is supported by an industrialized construction logic and an advanced innovation lab. Some components are already demonstrable, while others continue their development within a structured exploration framework.</span>
-            </p>
-
             <div class="actions">
               <a class="btn primary" href="https://cohabitat.modulimo.com/" target="_blank" rel="noopener">
                 <span data-lang="fr">Voir la démo logicielle</span>
@@ -854,19 +849,6 @@
                 <span data-lang="en">Explore innovation</span>
                 <span data-lang="es">Explorar innovación</span>
               </a>
-            </div>
-
-            <div class="split-note">
-              <span class="chip">
-                <span data-lang="fr">Démo accessible dès maintenant</span>
-                <span data-lang="en">Demo available now</span>
-                <span data-lang="es">Demo disponible ahora</span>
-              </span>
-              <span class="chip">
-                <span data-lang="fr">Positionnement investisseurs et partenaires</span>
-                <span data-lang="en">Investor and partner positioning</span>
-                <span data-lang="es">Posicionamiento para inversores</span>
-              </span>
             </div>
           </div>
         </div>
@@ -884,37 +866,7 @@
           </div>
         </div>
       </div>
-    </section>
-
-    <section class="block" id="thesis">
-      <div class="grid-3">
-        <article class="panel card-pad">
-          <div class="smallcaps"><span data-lang="fr">Thèse 01</span><span data-lang="en">Thesis 01</span></div>
-          <h2 class="section-title"><span data-lang="fr">Le logement familial manque d’intégration</span><span data-lang="en">Family housing lacks integration</span></h2>
-          <p class="section-text"><span data-lang="fr">Le marché combine souvent immeuble, gestion, mobilité et services dans des systèmes séparés. MODULIMO propose de les réunir dans une même architecture de valeur.</span><span data-lang="en">The market often treats buildings, management, mobility, and services as separate systems. MODULIMO aims to combine them into a single value architecture.</span></p>
-        </article>
-        <article class="panel card-pad">
-          <div class="smallcaps"><span data-lang="fr">Thèse 02</span><span data-lang="en">Thesis 02</span></div>
-          <h2 class="section-title"><span data-lang="fr">Le logiciel crée l’avantage opérationnel</span><span data-lang="en">Software creates the operational edge</span></h2>
-          <p class="section-text"><span data-lang="fr">La couche logicielle rend le modèle mesurable, pilotable et améliorable. Elle transforme un projet immobilier en système opérable.</span><span data-lang="en">The software layer makes the model measurable, manageable, and improvable. It turns a real estate project into an operable system.</span></p>
-        </article>
-        <article class="panel card-pad">
-          <div class="smallcaps"><span data-lang="fr">Thèse 03</span><span data-lang="en">Thesis 03</span></div>
-          <h2 class="section-title"><span data-lang="fr">L’industrialisation ouvre la voie au déploiement</span><span data-lang="en">Industrialization enables deployment</span></h2>
-          <p class="section-text"><span data-lang="fr">La standardisation constructive, combinée à une logique de marque et à des actifs numériques, peut soutenir un modèle duplicable et scalable.</span><span data-lang="en">Construction standardization, combined with brand logic and digital assets, can support a duplicable and scalable model.</span></p>
-        </article>
-      </div>
-    </section>
-
-    <section class="block">
-      <div class="band">
-        <div class="smallcaps"><span data-lang="fr">Message investisseur</span><span data-lang="en">Investor message</span></div>
-        <h2 class="section-title soft"><span data-lang="fr">MODULIMO ne vend pas un seul bâtiment. MODULIMO construit un modèle.</span><span data-lang="en">MODULIMO is not selling a single building. MODULIMO is building a model.</span></h2>
-        <p class="section-text soft"><span data-lang="fr">Le potentiel du projet réside dans l’intégration entre habitation familiale, logiciel, mobilité, services et standardisation constructive. La valeur créée ne repose pas uniquement sur l’actif immobilier, mais sur la capacité à reproduire un système cohérent.</span><span data-lang="en">The project’s potential lies in the integration of family housing, software, mobility, services, and construction standardization. The value created does not rely only on the real estate asset, but on the ability to reproduce a coherent system.</span></p>
-      </div>
-    </section>
-
-    <section class="block" id="commercialises">
+        <section class="block" id="commercialises">
       <div class="section-banner">
         <span class="banner-label">01</span>
         <h2><span data-lang="fr">Produits commercialisés</span><span data-lang="en">Available products</span><span data-lang="es">Productos disponibles</span></h2>
@@ -1247,12 +1199,6 @@
     </div>
   </div>
 
-  <!-- Modal logo dédié -->
-  <div id="logoModal" style="display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);align-items:center;justify-content:center;" aria-hidden="true">
-    <button id="logoModalClose" type="button" style="position:absolute;top:20px;right:20px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:50%;width:44px;height:44px;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:1;">&#x2715;</button>
-    <img src="images/Logo_Produits_Modulimo.png" alt="MODULIMO" style="max-width:90vw;max-height:80vh;object-fit:contain;border-radius:10px;box-shadow:0 12px 60px rgba(0,0,0,.7);" />
-  </div>
-
 
   <a class="minette-anchor" id="minetteAnchor" href="#top" aria-label="Minette">
     <div class="minette-badge"><span data-lang="fr">Minette</span><span data-lang="en">Minette</span></div>
@@ -1268,29 +1214,6 @@
 
   <script>
     (function() {
-      var BLOCK_TAGS = {'DIV':1,'SECTION':1,'ARTICLE':1,'ASIDE':1,'LI':1,'TD':1,'TH':1,'FIGURE':1,'FIGCAPTION':1};
-
-      function naturalDisplay(el) {
-        return BLOCK_TAGS[el.tagName] ? 'block' : 'inline';
-      }
-
-      function applyEsFallback(lang) {
-        // Reset tous les styles forcés
-        document.querySelectorAll('[data-lang="fr"]').forEach(function(frEl) {
-          frEl.style.display = '';
-        });
-        if (lang !== 'es') return;
-
-        // Pour chaque élément FR dont le parent n'a pas de version ES → afficher en fallback
-        document.querySelectorAll('[data-lang="fr"]').forEach(function(frEl) {
-          var parent = frEl.parentElement;
-          if (!parent) return;
-          if (!parent.querySelector('[data-lang="es"]')) {
-            frEl.style.display = naturalDisplay(frEl);
-          }
-        });
-      }
-
       const root = document.documentElement;
       const stored = localStorage.getItem('modulimo_lang');
       const browser = (navigator.language || navigator.userLanguage || 'fr').toLowerCase();
@@ -1303,8 +1226,6 @@
         root.classList.add('lang-' + lang);
         root.setAttribute('lang', lang);
         localStorage.setItem('modulimo_lang', lang);
-        applyEsFallback(lang);
-        updateActiveLangBtn(lang);
       }
       function closeMenu() {
         if (!nav || !toggle) return;
@@ -1319,12 +1240,7 @@
         toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       }
 
-      // Au chargement, attendre que le DOM soit prêt pour le fallback ES
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', function() { setLang(initial); });
-      } else {
-        setLang(initial);
-      }
+      setLang(initial);
 
       document.querySelectorAll('[data-set-lang]').forEach(btn => {
         btn.addEventListener('click', function() {
@@ -1333,28 +1249,11 @@
         });
       });
 
-      // Active state sur les boutons de langue
-      function updateActiveLangBtn(lang) {
-        document.querySelectorAll('[data-set-lang]').forEach(function(b) {
-          b.classList.toggle('active', b.getAttribute('data-set-lang') === lang);
-        });
-      }
-
       if (toggle) toggle.addEventListener('click', toggleMenu);
       document.querySelectorAll('#siteNav a').forEach(link => link.addEventListener('click', closeMenu));
       window.addEventListener('resize', function() {
         if (window.innerWidth > 760) closeMenu();
       });
-
-      // Accordéon avis important
-      const legalAccordion = document.getElementById('legalAccordion');
-      const legalTrigger = document.getElementById('legalTrigger');
-      if (legalTrigger && legalAccordion) {
-        legalTrigger.addEventListener('click', function() {
-          const isOpen = legalAccordion.classList.toggle('is-open');
-          legalTrigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-        });
-      }
 
       const dashboardModal = document.getElementById('dashboardModal');
       const dashboardModalFrame = document.getElementById('dashboardModalFrame');
@@ -1417,32 +1316,6 @@
         document.body.style.overflow = '';
       }
 
-      // Logo → plein écran (modal dédié)
-      const logoModal = document.getElementById('logoModal');
-      const logoModalClose = document.getElementById('logoModalClose');
-      const logoBtn = document.getElementById('logoBtn');
-
-      function openLogoModal() {
-        if (!logoModal) return;
-        logoModal.style.display = 'flex';
-        logoModal.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-      }
-      function closeLogoModal() {
-        if (!logoModal) return;
-        logoModal.style.display = 'none';
-        logoModal.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-      }
-      if (logoBtn) logoBtn.addEventListener('click', openLogoModal);
-      if (logoModalClose) logoModalClose.addEventListener('click', closeLogoModal);
-      if (logoModal) logoModal.addEventListener('click', function(e) {
-        if (e.target === logoModal) closeLogoModal();
-      });
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') closeLogoModal();
-      });
-
       document.querySelectorAll('[data-image-fullscreen]').forEach(btn => {
         btn.addEventListener('click', function() {
           openImageModal(this.getAttribute('data-image-fullscreen'));
@@ -1502,6 +1375,212 @@
     })();
   </script>
 
+  <!-- Modal logo dédié -->
+  <div id="logoModal" style="display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);align-items:center;justify-content:center;" aria-hidden="true">
+    <button id="logoModalClose" type="button" style="position:absolute;top:20px;right:20px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:50%;width:44px;height:44px;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:1;">&#x2715;</button>
+    <img src="images/Logo_Produits_Modulimo.png" alt="MODULIMO" style="max-width:90vw;max-height:80vh;object-fit:contain;border-radius:10px;box-shadow:0 12px 60px rgba(0,0,0,.7);" />
+  </div>
 
+  <script>
+    (function() {
+      var BLOCK_TAGS = {'DIV':1,'SECTION':1,'ARTICLE':1,'ASIDE':1,'LI':1,'TD':1,'TH':1,'FIGURE':1,'FIGCAPTION':1};
+      function naturalDisplay(el){ return BLOCK_TAGS[el.tagName] ? 'block' : 'inline'; }
+
+      function applyEsFallback(lang) {
+        document.querySelectorAll('[data-lang="fr"]').forEach(function(el){ el.style.display = ''; });
+        if (lang !== 'es') return;
+        document.querySelectorAll('[data-lang="fr"]').forEach(function(frEl) {
+          var parent = frEl.parentElement;
+          if (!parent) return;
+          if (!parent.querySelector('[data-lang="es"]')) {
+            frEl.style.display = naturalDisplay(frEl);
+          }
+        });
+      }
+
+      function updateActiveLangBtn(lang) {
+        document.querySelectorAll('[data-set-lang]').forEach(function(b) {
+          b.classList.toggle('active', b.getAttribute('data-set-lang') === lang);
+        });
+      }
+
+      const root = document.documentElement;
+      const stored = localStorage.getItem('modulimo_lang');
+      const browser = (navigator.language || navigator.userLanguage || 'fr').toLowerCase();
+      const initial = stored || (browser.startsWith('fr') ? 'fr' : browser.startsWith('es') ? 'es' : 'en');
+      const nav = document.getElementById('siteNav');
+      const toggle = document.getElementById('menuToggle');
+
+      function setLang(lang) {
+        root.classList.remove('lang-fr','lang-en','lang-es');
+        root.classList.add('lang-' + lang);
+        root.setAttribute('lang', lang);
+        localStorage.setItem('modulimo_lang', lang);
+        applyEsFallback(lang);
+        updateActiveLangBtn(lang);
+      }
+      function closeMenu() {
+        if (!nav || !toggle) return;
+        nav.classList.remove('is-open');
+        toggle.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded','false');
+      }
+      function toggleMenu() {
+        if (!nav || !toggle) return;
+        const isOpen = nav.classList.toggle('is-open');
+        toggle.classList.toggle('is-open', isOpen);
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function(){ setLang(initial); });
+      } else {
+        setLang(initial);
+      }
+
+      document.querySelectorAll('[data-set-lang]').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          setLang(this.getAttribute('data-set-lang'));
+          closeMenu();
+        });
+      });
+
+      if (toggle) toggle.addEventListener('click', toggleMenu);
+      document.querySelectorAll('#siteNav a').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          var href = this.getAttribute('href');
+          if (href && href.startsWith('#')) {
+            e.preventDefault();
+            closeMenu();
+            var target = document.querySelector(href);
+            if (target) {
+              var offset = 80;
+              var top = target.getBoundingClientRect().top + window.scrollY - offset;
+              window.scrollTo({ top: top, behavior: 'smooth' });
+            }
+          } else {
+            closeMenu();
+          }
+        });
+      });
+      window.addEventListener('resize', function(){ if(window.innerWidth>760) closeMenu(); });
+
+      // Logo modal
+      const logoModal = document.getElementById('logoModal');
+      const logoModalClose = document.getElementById('logoModalClose');
+      const logoBtn = document.getElementById('logoBtn');
+      function openLogoModal() {
+        if (!logoModal) return;
+        logoModal.style.display = 'flex';
+        logoModal.setAttribute('aria-hidden','false');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeLogoModal() {
+        if (!logoModal) return;
+        logoModal.style.display = 'none';
+        logoModal.setAttribute('aria-hidden','true');
+        document.body.style.overflow = '';
+      }
+      if (logoBtn) logoBtn.addEventListener('click', openLogoModal);
+      if (logoModalClose) logoModalClose.addEventListener('click', closeLogoModal);
+      if (logoModal) logoModal.addEventListener('click', function(e){ if(e.target===logoModal) closeLogoModal(); });
+      document.addEventListener('keydown', function(e){ if(e.key==='Escape'){ closeLogoModal(); } });
+
+      // Legal accordion
+      const legalAccordion = document.getElementById('legalAccordion');
+      const legalTrigger = document.getElementById('legalTrigger');
+      if (legalTrigger && legalAccordion) {
+        legalTrigger.addEventListener('click', function() {
+          const isOpen = legalAccordion.classList.toggle('is-open');
+          legalTrigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+      }
+
+      // Dashboard modal
+      const dashboardModal = document.getElementById('dashboardModal');
+      const dashboardModalFrame = document.getElementById('dashboardModalFrame');
+      const dashboardClose = document.getElementById('dashboardClose');
+      const dashboardExternalLink = document.getElementById('dashboardExternalLink');
+      function openDashboardModal(url) {
+        if (!dashboardModal || !dashboardModalFrame) return;
+        dashboardModalFrame.src = url;
+        if (dashboardExternalLink) dashboardExternalLink.href = url;
+        dashboardModal.classList.add('is-open');
+        dashboardModal.setAttribute('aria-hidden','false');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeDashboardModal() {
+        if (!dashboardModal || !dashboardModalFrame) return;
+        dashboardModal.classList.remove('is-open');
+        dashboardModal.setAttribute('aria-hidden','true');
+        dashboardModalFrame.src = 'about:blank';
+        document.body.style.overflow = '';
+      }
+      document.querySelectorAll('[data-dashboard-url]').forEach(function(btn) {
+        btn.addEventListener('click', function(){ openDashboardModal(this.getAttribute('data-dashboard-url')); });
+      });
+      if (dashboardClose) dashboardClose.addEventListener('click', closeDashboardModal);
+      if (dashboardModal) dashboardModal.addEventListener('click', function(e){ if(e.target===dashboardModal) closeDashboardModal(); });
+
+      // Image modal
+      const imageModal = document.getElementById('imageModal');
+      const imageModalTarget = document.getElementById('imageModalTarget');
+      const imageModalClose = document.getElementById('imageModalClose');
+      function openImageModal(src) {
+        if (!imageModal || !imageModalTarget) return;
+        imageModalTarget.src = src;
+        imageModal.classList.add('is-open');
+        imageModal.setAttribute('aria-hidden','false');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeImageModal() {
+        if (!imageModal) return;
+        imageModal.classList.remove('is-open');
+        imageModal.setAttribute('aria-hidden','true');
+        if (imageModalTarget) imageModalTarget.src = '';
+        document.body.style.overflow = '';
+      }
+      document.querySelectorAll('[data-image-fullscreen]').forEach(function(btn) {
+        btn.addEventListener('click', function(){ openImageModal(this.getAttribute('data-image-fullscreen')); });
+      });
+      if (imageModalClose) imageModalClose.addEventListener('click', closeImageModal);
+      if (imageModal) imageModal.addEventListener('click', function(e){ if(e.target===imageModal) closeImageModal(); });
+
+      // Minette scroll behavior
+      const minetteAnchor = document.getElementById('minetteAnchor');
+      if (minetteAnchor) {
+        window.addEventListener('scroll', function() {
+          const st = window.scrollY;
+          if (st < 60) { minetteAnchor.classList.remove('is-hidden','is-reading','is-cinematic'); }
+          else if (st > 400) { minetteAnchor.classList.add('is-reading'); minetteAnchor.classList.remove('is-hidden','is-cinematic'); }
+          else { minetteAnchor.classList.add('is-hidden'); minetteAnchor.classList.remove('is-reading','is-cinematic'); }
+        });
+      }
+
+      // Dashboard preview scale
+      const DASH_W = 1280, DASH_H = 800;
+      function scaleDashPreview() {
+        var wrap = document.getElementById('dashboardPreviewWrap');
+        var frame = document.getElementById('dashboardPreviewFrame');
+        if (!wrap || !frame) return;
+        var containerW = wrap.getBoundingClientRect().width || wrap.offsetWidth;
+        if (containerW < 10) return;
+        var scale = containerW / DASH_W;
+        wrap.style.height = Math.round(DASH_H * scale) + 'px';
+        frame.style.width = DASH_W + 'px';
+        frame.style.height = DASH_H + 'px';
+        frame.style.transform = 'scale(' + scale + ')';
+        frame.style.transformOrigin = 'top left';
+      }
+      requestAnimationFrame(function(){ scaleDashPreview(); requestAnimationFrame(scaleDashPreview); });
+      window.addEventListener('load', scaleDashPreview);
+      window.addEventListener('resize', scaleDashPreview);
+      if (typeof ResizeObserver !== 'undefined') {
+        var wrap = document.getElementById('dashboardPreviewWrap');
+        if (wrap) new ResizeObserver(scaleDashPreview).observe(wrap);
+      }
+
+    })();
+  </script>
 </body>
 </html>
