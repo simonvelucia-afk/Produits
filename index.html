@@ -617,6 +617,39 @@
 
 
     section.block{padding:18px 0}
+    .legal-accordion{
+      border-left:4px solid var(--gold);
+      background:linear-gradient(180deg,rgba(255,216,117,.09),rgba(255,216,117,.03));
+      border-radius:0 10px 10px 0;
+      overflow:hidden;
+    }
+    .legal-accordion-trigger{
+      width:100%; display:flex; align-items:center; justify-content:space-between;
+      gap:12px; padding:13px 20px;
+      background:none; border:none; color:var(--text);
+      font:inherit; font-size:.88rem; font-weight:600;
+      cursor:pointer; text-align:left;
+      color:#f4e7bd;
+    }
+    .legal-accordion-trigger:hover{ background:rgba(255,216,117,.06); }
+    .legal-accordion-icon{
+      font-size:1rem; flex-shrink:0;
+      transition:transform .25s ease;
+      color:var(--gold);
+    }
+    .legal-accordion.is-open .legal-accordion-icon{ transform:rotate(180deg); }
+    .legal-accordion-body{
+      max-height:0; overflow:hidden;
+      transition:max-height .3s ease, padding .3s ease;
+      padding:0 20px;
+    }
+    .legal-accordion.is-open .legal-accordion-body{
+      max-height:300px;
+      padding:0 20px 16px;
+    }
+    .legal-accordion-body div{
+      font-size:.84rem; line-height:1.75; color:#f4e7bd;
+    }
     .legal{
       padding:22px; border-left:4px solid var(--gold);
       background:linear-gradient(180deg, rgba(255,216,117,.11), rgba(255,216,117,.04));
@@ -771,6 +804,25 @@
     </div>
   </header>
 
+  <!-- Avis important accordéon -->
+  <div class="wrap" style="padding-top:72px;">
+    <div class="legal-accordion" id="legalAccordion">
+      <button class="legal-accordion-trigger" id="legalTrigger" aria-expanded="false" aria-controls="legalBody">
+        <span>
+          <span data-lang="fr">⚠ Avis important</span>
+          <span data-lang="en">⚠ Important notice</span>
+          <span data-lang="es">⚠ Aviso importante</span>
+        </span>
+        <span class="legal-accordion-icon" aria-hidden="true">▾</span>
+      </button>
+      <div class="legal-accordion-body" id="legalBody" role="region" aria-labelledby="legalTrigger">
+        <div data-lang="fr">Les concepts, visuels, scénarios et fonctionnalités présentés sur cette page sont fournis à titre informatif et illustratif seulement. Ils ne constituent ni une offre de vente, ni une offre d'investissement, ni des plans d'ingénierie, ni une attestation de conformité, ni une garantie de performance, de sécurité, de disponibilité, d'économies ou de résultats. Toute mise en œuvre réelle devra être validée par les professionnels compétents et conforme aux exigences techniques, réglementaires, contractuelles et financières applicables.</div>
+        <div data-lang="en">The concepts, visuals, scenarios, and features presented on this page are provided for informational and illustrative purposes only. They do not constitute an offer for sale, an investment offer, engineering plans, compliance certification, or any guarantee of performance, safety, availability, savings, or outcomes. Any real-world implementation must be validated by qualified professionals and comply with applicable technical, regulatory, contractual, and financial requirements.</div>
+        <div data-lang="es">Los conceptos, visuales, escenarios y funcionalidades presentados en esta página se proporcionan únicamente con fines informativos e ilustrativos. No constituyen una oferta de venta, oferta de inversión, planos de ingeniería, certificación de cumplimiento ni garantía de rendimiento, seguridad, disponibilidad, ahorros o resultados. Cualquier implementación real deberá ser validada por profesionales calificados y cumplir con los requisitos técnicos, regulatorios, contractuales y financieros aplicables.</div>
+      </div>
+    </div>
+  </div>
+
   <main class="wrap">
     <section class="hero">
       <div class="hero-grid">
@@ -833,14 +885,6 @@
         </div>
       </div>
     </section>
-
-    <section class="block">
-      <div class="legal">
-        <div data-lang="fr"><strong>⚠ Avis important</strong><br>Les concepts, visuels, scénarios et fonctionnalités présentés sur cette page sont fournis à titre informatif et illustratif seulement. Ils ne constituent ni une offre de vente, ni une offre d’investissement, ni des plans d’ingénierie, ni une attestation de conformité, ni une garantie de performance, de sécurité, de disponibilité, d’économies ou de résultats. Toute mise en œuvre réelle devra être validée par les professionnels compétents et conforme aux exigences techniques, réglementaires, contractuelles et financières applicables.</div>
-        <div data-lang="en"><strong>⚠ Important notice</strong><br>The concepts, visuals, scenarios, and features presented on this page are provided for informational and illustrative purposes only. They do not constitute an offer for sale, an investment offer, engineering plans, compliance certification, or any guarantee of performance, safety, availability, savings, or outcomes. Any real-world implementation must be validated by qualified professionals and comply with applicable technical, regulatory, contractual, and financial requirements.</div>
-      </div>
-    </section>
-
 
     <section class="block" id="thesis">
       <div class="grid-3">
@@ -1301,6 +1345,16 @@
       window.addEventListener('resize', function() {
         if (window.innerWidth > 760) closeMenu();
       });
+
+      // Accordéon avis important
+      const legalAccordion = document.getElementById('legalAccordion');
+      const legalTrigger = document.getElementById('legalTrigger');
+      if (legalTrigger && legalAccordion) {
+        legalTrigger.addEventListener('click', function() {
+          const isOpen = legalAccordion.classList.toggle('is-open');
+          legalTrigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+      }
 
       const dashboardModal = document.getElementById('dashboardModal');
       const dashboardModalFrame = document.getElementById('dashboardModalFrame');
